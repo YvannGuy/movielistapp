@@ -2,31 +2,63 @@
 * {
     margin: 0;
     padding: 0;
-    background-color: #121829;
     font-family: "Poppins", serif;
 }
 
+.title-item {
+    color: white;
+    margin-left: -700px;
+    padding: 30px 0;
+}
+
+.screen-size {
+    width: 990px;
+    height: 500px;
+    border-radius: 20px;
+}
+
 /* MovieCards.css */
-
-
-
 .trailer-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
+    background-color: #0b0f1e;
 }
 .movie-cards-section {
     padding: 40px;
     background-color: #0b0f1e;
 }
 
+.create-list-button {
+    margin: 10px 0 50px 216px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    padding: 16px 18px; /* Add padding for a larger clickable area */
+    background-color: #8a5cf6; /* Background color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 9px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text for style */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.create-list-button:hover {
+    background-color: #6f47b8; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift the button slightly on hover */
+}
+
+
 .movie-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
+    gap: 10px;
+    max-width: 1000px;
     margin: auto;
 }
 

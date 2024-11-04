@@ -1,12 +1,18 @@
+/* Base Styles */
 .header {
-    padding: 20px;
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #080b17;
+    color: white;
 }
 
 .header .logo {
     font-weight: bold;
     font-size: 24px;
+    color: #8a5cf6;
+    text-decoration: none;
 }
 
 .header a {
@@ -15,5 +21,76 @@
 }
 
 .header a:hover {
-    text-decoration: #121829;
+    text-decoration: underline;
+}
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Keep the search bar visible on both web and mobile */
+.search-bar {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.search-input {
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+    color: #333;
+    width: 180px; /* You can adjust this width as needed */
+}
+
+.search-input::placeholder {
+    color: #aaa;
+}
+
+/* Responsive Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide navigation links by default on mobile */
+        flex-direction: column;
+        background-color: #080b17;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show navigation links when active */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu toggle only on mobile */
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .header .logo {
+        padding-right: 0;
+    }
+
+    /* Ensure the search bar maintains its layout on mobile */
+    .search-bar {
+        width: 100%; /* Make the search input take full width */
+        max-width: 300px; /* You can adjust this max-width as needed */
+    }
+}
+
+/* Desktop-specific styles */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Hide menu toggle on desktop */
+    }
+
+    .header .logo {
+        padding-right: 414px; /* Only add this padding on desktop */
+    }
 }
