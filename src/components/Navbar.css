@@ -13,24 +13,29 @@
     font-size: 24px;
     color: #8a5cf6;
     text-decoration: none;
+    margin-left: 20px;
 }
 
 .header a {
-    color: white;
+    color: #A8AEBF;
     text-decoration: none;
 }
 
 .header a:hover {
-    text-decoration: underline;
+    color: white;
+    text-decoration: none;
 }
 
 .nav-links {
     display: flex;
-    gap: 50px;
+    gap: 30px;
     align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-right: 20px;
 }
 
-/* Keep the search bar visible on both web and mobile */
 .search-bar {
     flex-grow: 1;
     display: flex;
@@ -43,7 +48,7 @@
     border: 1px solid #ddd;
     background-color: white;
     color: #333;
-    width: 180px; /* You can adjust this width as needed */
+    width: 180px;
 }
 
 .search-input::placeholder {
@@ -52,8 +57,9 @@
 
 /* Responsive Mobile Styles */
 @media (max-width: 768px) {
+    /* Hide navigation links by default on mobile */
     .nav-links {
-        display: none; /* Hide navigation links by default on mobile */
+        display: none;
         flex-direction: column;
         background-color: #080b17;
         position: absolute;
@@ -61,36 +67,48 @@
         right: 0;
         width: 100%;
         padding: 20px;
+        gap: 10px; /* Less gap for mobile */
+        z-index: 1;
     }
 
+    /* Show navigation links when active */
     .nav-links.active {
-        display: flex; /* Show navigation links when active */
+        display: flex;
     }
 
     .menu-toggle {
-        display: block; /* Show menu toggle only on mobile */
+        display: block;
         font-size: 24px;
         cursor: pointer;
+        color: white;
     }
 
     .header .logo {
-        padding-right: 0;
+        margin-left: 0; /* Adjust margin on mobile */
     }
 
     /* Ensure the search bar maintains its layout on mobile */
     .search-bar {
-        width: 100%; /* Make the search input take full width */
-        max-width: 300px; /* You can adjust this max-width as needed */
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .search-input {
+        width: 100%; /* Full width on mobile */
     }
 }
 
 /* Desktop-specific styles */
 @media (min-width: 769px) {
     .menu-toggle {
-        display: none; /* Hide menu toggle on desktop */
+        display: none;
     }
 
     .header .logo {
-        padding-right: 414px; /* Only add this padding on desktop */
+        margin-left: 230px; /* Add left margin only on desktop */
+    }
+
+    .nav-links {
+        margin-right: 240px; /* Add right margin only on desktop */
     }
 }

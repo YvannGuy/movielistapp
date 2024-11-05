@@ -45,7 +45,7 @@ function HomePage() {
     return (
         <div>
             <section className="trailer-section">
-                <h2 className="title-item">Watch the latest trailer</h2>
+                <h2 className="title-item">WATCH THE LATEST TRAILER</h2>
                 <div className="trailer-container">
                     {trailerUrl ? (
                         <iframe
@@ -63,8 +63,8 @@ function HomePage() {
             </section>
 
             <section className="movie-cards-section">
-                <button className="create-list-button" onClick={handleCreateList}>
-                    Create Your Own List
+                <button className="add-movie-list-button-plus" onClick={handleCreateList}>
+                    Add movie
                 </button>
                 <div className="movie-cards-container">
                     {movies.map((movie) => (
@@ -76,7 +76,7 @@ function HomePage() {
                             />
                             <h2 className="title-movie-card">{movie.original_title}</h2>
                             <button className="add-to-list-button" onClick={() => handleAddToList(movie)}>
-                                Add to list
+                                More details
                             </button>
                         </div>
                     ))}

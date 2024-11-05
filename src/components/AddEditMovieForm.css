@@ -1,0 +1,154 @@
+/* Réinitialisation globale et styles de base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background-image: url('../assets/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+/* Conteneur principal pour le formulaire et l'image */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 40px auto;
+    gap: 20px; /* Espace entre le formulaire et l'image */
+    padding: 20px;
+}
+
+/* Container du formulaire */
+.form-container {
+    flex: 1;
+    max-width: 600px;
+    padding: 40px;
+    background-color: rgba(15, 15, 15, 0.7);
+    border-radius: 16px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease;
+}
+
+/* Image header */
+.header-image {
+    flex: 1;
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation de fondu */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Titre */
+.form-container h2 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    color: #cccccc;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Groupe de formulaire */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label */
+.form-group label {
+    font-weight: 400;
+    font-size: 1rem;
+    color: #b0b0b0;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Styles des champs de saisie */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"],
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    color: #dcdcdc;
+    background-color: rgba(40, 40, 40, 0.6);
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Effets de survol et de focus */
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group input:focus,
+.form-group textarea:focus {
+    background-color: rgba(50, 50, 50, 0.8);
+    transform: scale(1.02);
+}
+
+/* Textarea pour la description */
+.form-group textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* Bouton de soumission */
+.add-movie-button-second {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    background-color: rgb(111, 71, 184);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Effets de survol et d'activation pour le bouton */
+.add-movie-button-second:hover {
+    background-color: rgba(120, 120, 120, 0.7);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.add-movie-button-second:active {
+    background-color: rgba(80, 80, 80, 0.7);
+    transform: translateY(0) scale(1);
+}
+
+/* Ajustements réactifs */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-container, .header-image {
+        max-width: 90%;
+    }
+
+    .form-container h2 {
+        font-size: 1.6rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+}
