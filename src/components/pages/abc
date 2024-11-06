@@ -1,0 +1,18 @@
+
+
+
+GET /movieapplist.json
+GET /movieapplist/:id.json
+POST /movieapplist.json
+
+1. Functionality to delete a movie
+DELETE /movieapplist/:id.json
+
+
+2. Functionality to edit a movie
+- render a form + pre-populate the form
+- when the user submits, send a request to the api
+    axios.patch(`${baseUrl}/movieapplist/:id.json`, data)
+
+
+PATCH /movieapplist/:id.json

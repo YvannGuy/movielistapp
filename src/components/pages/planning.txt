@@ -1,0 +1,28 @@
+
+*** API ***
+
+- Setup & test API on Firebase
+  - Follow this recording: https://www.loom.com/share/5406d86390fa49f889a35581c657fc5d?sid=6eae4360-6ac4-4c4a-b976-8c4013a79b69
+
+  - Test all the endpoints with Postman:
+    POST /movies.json
+    GET /movies.json
+    GET /movies/:movieId.json
+    PATCH /movies/:movieId.json (partial update)
+    DELETE /movies/:movieId.json
+
+- Create some initial data (4 movies)
+    - title
+    - description
+    - year
+    - casting (eg. "Angelina Jolie, Brad Pitt")
+    - imageURL (eg. "https://imdb.com/images/ms-andmr.jpg")
+
+*** React ***
+
+- Modify your React app so that it displays a list of movies coming from your own API:
+  - Modify getAllMovies() so that you get the list of movies from your own api
+  - note: remember that Firebase returns an object, so need to convert it to an array (as shown in the video)
+
+
+
