@@ -1,0 +1,67 @@
+.footer {
+    background-color: #080b17;
+    color: #A8AEBF;
+    text-align: center;
+    padding: 25px 20px;
+    font-family: "Roboto", sans-serif;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Ajouté pour permettre une disposition verticale sur petits écrans */
+}
+
+.footer-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Vous pouvez ajuster cet espace */
+    flex-wrap: wrap; /* Permet de passer à une nouvelle ligne si nécessaire */
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin: 5px 20px; /* Réduit la marge pour les petits écrans */
+    color: #A8AEBF;
+    text-align: center; /* Assure que le texte est centré même sur petits écrans */
+}
+
+.footer-content p:hover {
+    color: white;
+}
+
+.footer-content a {
+    color: #A8AEBF;
+    text-decoration: none;
+}
+
+.footer-content a:hover {
+    color: white;
+}
+
+/* Media Query pour les petits écrans (mobile, tablette) */
+@media screen and (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Passe la disposition des éléments en colonne sur petits écrans */
+        gap: 15px; /* Réduit l'écart entre les éléments */
+        margin-top: 15px; /* Ajoute un espace entre le haut du footer et les éléments */
+    }
+
+    .footer-content p {
+        margin: 5px 0; /* Élimine les marges latérales pour économiser de l'espace */
+    }
+}
+
+/* Media Query pour les très petits écrans (mobile portrait) */
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 20px 15px; /* Réduit un peu la taille du padding pour les petits écrans */
+    }
+
+    .footer-content {
+        gap: 10px; /* Réduit encore l'espace entre les éléments */
+    }
+}

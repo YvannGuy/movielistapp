@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import '../AddEditMovieForm.css';
-import headerImage from '/src/assets/filmbg.jpg'; // Remplacez par le chemin de votre image
+import headerImage from '/src/assets/filmbg.jpg';
+import { API_URL } from '/src/api.js';
 
 const AddEditMovieForm = () => {
     const [movieData, setMovieData] = useState({
@@ -17,18 +19,46 @@ const AddEditMovieForm = () => {
     };
 
     const handleImageChange = (e) => {
-        setMovieData({ ...movieData, image: e.target.files[0] });
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setMovieData({ ...movieData, image: reader.result }); // Enregistre l'image en base64
+            };
+            reader.readAsDataURL(file); // Lit le fichier en tant que URL de données
+        }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Code pour soumettre les données du formulaire
-        console.log('Movie Data:', movieData);
+
+        const newMovie = {
+            title: movieData.name,
+            imageURL: movieData.image, // Utilise l'image en base64
+            year: movieData.year,
+            actors: movieData.actors,
+            description: movieData.description,
+            createdByForm: true
+        };
+
+        try {
+            const response = await axios.post(`${API_URL}/moviesapplist.json`, newMovie);
+            console.log('Movie added successfully:', response.data);
+
+            setMovieData({
+                name: '',
+                image: null,
+                year: '',
+                actors: '',
+                description: ''
+            });
+        } catch (error) {
+            console.error('Error adding movie:', error);
+        }
     };
 
     return (
         <div className="main-container">
-            {/* Container du formulaire */}
             <div className="form-container">
                 <h2>CREATE YOUR MOVIE</h2>
                 <form onSubmit={handleSubmit}>
@@ -92,7 +122,6 @@ const AddEditMovieForm = () => {
                 </form>
             </div>
 
-            {/* Image header */}
             <img src={headerImage} alt="Header" className="header-image" />
         </div>
     );

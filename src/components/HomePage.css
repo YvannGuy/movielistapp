@@ -5,19 +5,82 @@
     font-family: "Roboto", sans-serif;
 }
 
+/*WTP APP & TEXT*/
+.home-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    align-items: flex-start; /* Align content to the left */
+    padding: 2rem;
+    color: white;
+    background-color: #0b0f1e;
+    background-image: url('../assets/background.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.body-container {
+    text-align: left; /* Aligns text to the left */
+    max-width: 600px;
+    margin-bottom: 4rem;
+    margin-top: 60px;
+    margin-left: 14rem; /* Adjust margin to align with other sections */
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+.highlight {
+    color: #6c63ff; /* Purple color for "WTW" */
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    color: #A8AEBF;
+}
+
+/*.search-bar {
+    margin-top: 1.5rem;
+}
+
+.search-input {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 400px;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #999;
+}*/
+
 /* trailer component.css */
+/* Titre de la section trailer */
 .title-item {
     color: #A8AEBF;
     margin-left: -655px;
     padding: 42px 0;
 }
 
-.screen-size {
+/* Dimensions du lecteur Video.js */
+.video-js {
     width: 990px;
     height: 500px;
     border-radius: 20px;
 }
 
+/* Container de la section trailer */
 .trailer-section {
     display: flex;
     flex-direction: column;
@@ -25,16 +88,34 @@
     justify-content: center;
     width: 100%;
     background-color: #0b0f1e;
-    background-image: url('../assets/background.png'); /* Remplacez par le chemin de votre image */
+    background-image: url('../assets/background.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
+.vjs-poster {
+    display: none !important;
+}
+
+.vjs-big-play-button {
+    display: none !important;
+}
+
+/* Pour ajuster la peau par défaut de Video.js */
+.vjs-default-skin {
+    background-color: #0b0f1e;
+    color: #fff;
+}
+
+.vjs-control-bar {
+    font-size: 14px;
+}
+
 /* Add movie button */
 .add-movie-list-button-plus {
-    margin: 10px 0 50px 216px;
+    margin: 10px 0 50px 181px;
     display: flex;
     align-items: center;
     justify-content: center; /* Center the content horizontally */
@@ -65,14 +146,15 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    flex-grow: 1
 }
 
 .movie-cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
     gap: 20px; /* Adjusted for more spacing between cards */
     max-width: 990px;
-    margin: auto;
+    margin-left: 187px;
 }
 
 .movie-card {
@@ -104,6 +186,8 @@
     font-weight: 600;
 }
 
+
+/* button delete, details and edit */
 .add-to-list-button {
     background-color: #2b3a55;
     color: #b0b3c4;
@@ -111,17 +195,134 @@
     border-radius: 4px;
     padding: 8px 12px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    margin-top: 8px;
+    z-index: 10; /* Assurez-vous que le bouton est au-dessus des autres éléments */
+    position: relative; /* Pour s'assurer qu'il est cliquable */
+    margin-right: 10px ;
+}
+
+
+.delete-movie-button {
+    background-color: #2b3a55;
+    color: #b0b3c4;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 12px;
     transition: background-color 0.3s ease;
     margin-top: 8px;
     z-index: 10; /* Assurez-vous que le bouton est au-dessus des autres éléments */
     position: relative; /* Pour s'assurer qu'il est cliquable */
 }
 
-
 .add-to-list-button:hover {
     background-color: #6F47B8FF;
 }
+
+.delete-movie-button:hover {
+    background-color: #6f47b8;
+}
+
+/* Conteneur du modal */
+.edit-form-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px; /* Agrandi pour plus de confort */
+    background: #2b3a55;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    color: #b0b3c4;
+    font-family: Arial, sans-serif;
+}
+
+/* Titre du modal */
+.edit-form-modal h3 {
+    margin-top: 0;
+    color: #b0b3c4;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Champs de saisie */
+.edit-form-modal input {
+    display: block;
+    margin: 15px 0;
+    padding: 12px;
+    width: 100%;
+    background-color: #394863;
+    color: #b0b3c4;
+    border: 1px solid #4b5b6e;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.edit-form-modal input::placeholder {
+    color: #a0a3b5; /* Couleur plus claire pour les placeholders */
+}
+
+/* Boutons du modal */
+.edit-form-modal button {
+    margin: 10px 5px;
+    padding: 12px 20px;
+    width: calc(50% - 10px);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* Bouton de soumission */
+.edit-form-modal button:first-of-type {
+    background-color: #4c83ff;
+    color: #ffffff;
+}
+
+.edit-form-modal button:first-of-type:hover {
+    background-color: #3a6cd1;
+}
+
+/* Bouton d'annulation */
+.edit-form-modal button:last-of-type {
+    background-color: #6e7681;
+    color: #ffffff;
+}
+
+.edit-form-modal button:last-of-type:hover {
+    background-color: #565d66;
+}
+
+
+.edit-movie-button {
+    background-color: #2b3a55;
+    color: #b0b3c4;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    margin-top: 8px;
+    z-index: 10; /* Assurez-vous que le bouton est au-dessus des autres éléments */
+    position: relative; /* Pour s'assurer qu'il est cliquable */
+    margin-left: 10px;
+}
+
+.edit-movie-button:hover {
+    background-color: #6f47b8;
+}
+
+
 
 /* Star rating overlay */
 .movie-card::before {
@@ -161,9 +362,22 @@
         font-size: 12px;
     }
 
-@media (max-width: 480px) {
-    .movie-card {
-        padding: 10px;
+
+/* Mobile and tablet */
+@media screen and (max-width: 768px) {
+    .body-container {
+        margin-left: 2rem;
+        margin-top: 30px;
+    }
+
+    .movie-cards-container {
+        margin-left: 0;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+
+    .add-movie-list-button-plus {
+        margin: 10px auto;
     }
 
     .movie-card h2 {
@@ -171,11 +385,44 @@
     }
 
     .movie-card p {
-        font-size: 10px;
+        font-size: 11px;
     }
 
-    .movie-card .add-to-list-button {
-        padding: 8px;
-        font-size: 10px;
+    .add-to-list-button {
+        font-size: 12px;
     }
 }
+
+/* Small screens (mobile portrait) */
+@media screen and (max-width: 480px) {
+    .home-container {
+        padding: 1rem;
+    }
+
+    .body-container {
+        margin-left: 1rem;
+        margin-top: 20px;
+    }
+
+    .movie-cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .add-movie-list-button-plus {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .movie-card {
+        font-size: 14px;
+    }
+
+    .movie-card h2 {
+        font-size: 14px;
+    }
+
+    .add-to-list-button {
+        font-size: 12px;
+    }
+}
+

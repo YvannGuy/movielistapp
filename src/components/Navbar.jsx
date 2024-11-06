@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
-import logomid from '../assets/SVG/logomid.png'
+import logomid from '../assets/logofinal.png'
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -20,6 +20,7 @@ const Navbar = () => {
             <div className={`nav-links ${menuOpen ? 'active' : ''}`}>
                 <Link to="/">HOME</Link>
                 <Link to="/addEditMovieForm">ADD MOVIE</Link>
+                {/*<Link to="/mylist">MY LIST</Link>*/}
             </div>
             <div className="menu-toggle" onClick={toggleMenu}>
                 ☰

@@ -1,0 +1,1 @@
+export const API_URL = 'https://database-movielist-default-rtdb.europe-west1.firebasedatabase.app';

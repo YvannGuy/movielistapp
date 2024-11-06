@@ -1,0 +1,16 @@
+.mylist-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: center; /* Centre les éléments verticalement */
+    min-height: 100vh; /* Assure que le conteneur prend au moins la hauteur de la vue */
+}
+.delete-button {
+    border: none; /* Pas de bordure */
+    border-radius: 2px; /* Coins arrondis */
+    padding: 5px 15px; /* Espacement à l'intérieur du bouton */
+    cursor: pointer; /* Curseur en forme de main sur le bouton */
+    font-size: 1em; /* Taille de police du bouton */ /* Transition pour l'effet au survol */
+    z-index: 10;
+}
+

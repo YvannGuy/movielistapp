@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 1200px;
+    max-width: 1090px;
     margin: 40px auto;
     gap: 20px; /* Espace entre le formulaire et l'image */
     padding: 20px;
