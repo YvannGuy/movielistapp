@@ -1,92 +1,18 @@
-/* index.css */
+/* Styles de base */
 * {
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
 }
 
-/*WTP APP & TEXT*/
+/* Conteneur principal centré */
 .home-container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
-    align-items: flex-start; /* Align content to the left */
+    min-height: 100vh;
+    align-items: center; /* Centre le contenu horizontalement */
     padding: 2rem;
     color: white;
-    background-color: #0b0f1e;
-    background-image: url('../assets/background.png'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.body-container {
-    text-align: left; /* Aligns text to the left */
-    max-width: 600px;
-    margin-bottom: 4rem;
-    margin-top: 60px;
-    margin-left: 14rem; /* Adjust margin to align with other sections */
-}
-
-.title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin: 0;
-    color: white;
-}
-
-.highlight {
-    color: #6c63ff; /* Purple color for "WTW" */
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    margin-top: 0.5rem;
-    color: #A8AEBF;
-}
-
-/*.search-bar {
-    margin-top: 1.5rem;
-}
-
-.search-input {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 25px;
-    width: 100%;
-    max-width: 400px;
-    color: #333;
-}
-
-.search-input::placeholder {
-    color: #999;
-}*/
-
-/* trailer component.css */
-/* Titre de la section trailer */
-.title-item {
-    color: #A8AEBF;
-    margin-left: -655px;
-    padding: 42px 0;
-}
-
-/* Dimensions du lecteur Video.js */
-.video-js {
-    width: 990px;
-    height: 500px;
-    border-radius: 20px;
-}
-
-/* Container de la section trailer */
-.trailer-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
     background-color: #0b0f1e;
     background-image: url('../assets/background.png');
     background-size: cover;
@@ -95,49 +21,64 @@
     background-attachment: fixed;
 }
 
-.vjs-poster {
-    display: none !important;
-}
-
-.vjs-big-play-button {
-    display: none !important;
-}
-
-/* Pour ajuster la peau par défaut de Video.js */
-.vjs-default-skin {
-    background-color: #0b0f1e;
-    color: #fff;
-}
-
-.vjs-control-bar {
-    font-size: 14px;
-}
-
-/* Add movie button */
-.add-movie-list-button-plus {
-    margin: 10px 0 50px 181px;
+/* Body Container */
+.body-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center the content horizontally */
-    padding: 16px 18px; /* Add padding for a larger clickable area */
-    background-color: #8a5cf6; /* Background color */
-    color: white; /* Text color */
-    border: none; /* Remove default border */
-    border-radius: 9px; /* Rounded corners */
-    font-weight: bold; /* Bold text */
-    text-transform: uppercase; /* Uppercase text for style */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition effects */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    padding: 20px;
+    max-width: 990px;
+    width: 90%;
+    margin: 50px auto;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Animation de fade-in */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Titre principal */
+.title {
+    font-size: 7rem;
+    font-weight: bold;
+    color: white;
+}
+
+.highlight {
+    color: #6c63ff;
+}
+
+.subtitle {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    color: #ffffff;
+}
+
+/* Bouton "Add Movie" positionné à gauche */
+.add-movie-list-button-plus {
+    align-self: flex-start; /* Place le bouton à gauche */
+    margin: 10px 0 20px;
+    padding: 16px 18px;
+    background-color: #8a5cf6;
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .add-movie-list-button-plus:hover {
-    background-color: #6f47b8; /* Darker shade on hover */
-    transform: translateY(-2px); /* Lift the button slightly on hover */
+    background-color: #6f47b8;
+    transform: translateY(-2px);
 }
 
-
-/* MovieCards */
+/* Section des cartes de films */
 .movie-cards-section {
     padding: 40px;
     background-color: #0b0f1e;
@@ -146,15 +87,16 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    flex-grow: 1
+    flex-grow: 1;
 }
 
+/* Conteneur des cartes de films */
 .movie-cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
-    gap: 20px; /* Adjusted for more spacing between cards */
+    gap: 20px;
     max-width: 990px;
-    margin-left: 187px;
+    margin: 55px auto;
 }
 
 .movie-card {
@@ -186,123 +128,9 @@
     font-weight: 600;
 }
 
-
-/* button delete, details and edit */
-.add-to-list-button {
-    background-color: #2b3a55;
-    color: #b0b3c4;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.3s ease;
-    margin-top: 8px;
-    z-index: 10; /* Assurez-vous que le bouton est au-dessus des autres éléments */
-    position: relative; /* Pour s'assurer qu'il est cliquable */
-    margin-right: 10px ;
-}
-
-
-.delete-movie-button {
-    background-color: #2b3a55;
-    color: #b0b3c4;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.3s ease;
-    margin-top: 8px;
-    z-index: 10; /* Assurez-vous que le bouton est au-dessus des autres éléments */
-    position: relative; /* Pour s'assurer qu'il est cliquable */
-}
-
-.add-to-list-button:hover {
-    background-color: #6F47B8FF;
-}
-
-.delete-movie-button:hover {
-    background-color: #6f47b8;
-}
-
-/* Conteneur du modal */
-.edit-form-modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px; /* Agrandi pour plus de confort */
-    background: #2b3a55;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    color: #b0b3c4;
-    font-family: Arial, sans-serif;
-}
-
-/* Titre du modal */
-.edit-form-modal h3 {
-    margin-top: 0;
-    color: #b0b3c4;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-}
-
-/* Champs de saisie */
-.edit-form-modal input {
-    display: block;
-    margin: 15px 0;
-    padding: 12px;
-    width: 100%;
-    background-color: #394863;
-    color: #b0b3c4;
-    border: 1px solid #4b5b6e;
-    border-radius: 8px;
-    font-size: 1rem;
-    box-sizing: border-box;
-}
-
-.edit-form-modal input::placeholder {
-    color: #a0a3b5; /* Couleur plus claire pour les placeholders */
-}
-
-/* Boutons du modal */
-.edit-form-modal button {
-    margin: 10px 5px;
-    padding: 12px 20px;
-    width: calc(50% - 10px);
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-}
-
-/* Bouton de soumission */
-.edit-form-modal button:first-of-type {
-    background-color: #4c83ff;
-    color: #ffffff;
-}
-
-.edit-form-modal button:first-of-type:hover {
-    background-color: #3a6cd1;
-}
-
-/* Bouton d'annulation */
-.edit-form-modal button:last-of-type {
-    background-color: #6e7681;
-    color: #ffffff;
-}
-
-.edit-form-modal button:last-of-type:hover {
-    background-color: #565d66;
-}
-
-
+/* Boutons des cartes de films */
+.add-to-list-button,
+.delete-movie-button,
 .edit-movie-button {
     background-color: #2b3a55;
     color: #b0b3c4;
@@ -313,116 +141,142 @@
     font-size: 12px;
     transition: background-color 0.3s ease;
     margin-top: 8px;
-    z-index: 10; /* Assurez-vous que le bouton est au-dessus des autres éléments */
-    position: relative; /* Pour s'assurer qu'il est cliquable */
-    margin-left: 10px;
+    position: relative;
+    margin-right: 7px;
 }
 
+.add-to-list-button:hover,
+.delete-movie-button:hover,
 .edit-movie-button:hover {
     background-color: #6f47b8;
 }
 
-
-
-/* Star rating overlay */
-.movie-card::before {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffcc00; /* Star color */
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-/* Overlay effect */
-.movie-card::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%);
-    border-radius: 8px;
-}
-
-
-    .movie-card h2 {
-        font-size: 16px;
-    }
-
-    .movie-card p {
-        font-size: 12px;
-    }
-
-    .movie-card .add-to-list-button {
-        font-size: 12px;
-    }
-
-
-/* Mobile and tablet */
+/* Responsivité */
 @media screen and (max-width: 768px) {
     .body-container {
-        margin-left: 2rem;
-        margin-top: 30px;
-    }
-
-    .movie-cards-container {
-        margin-left: 0;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 15px;
+        padding: 10px;
     }
 
     .add-movie-list-button-plus {
-        margin: 10px auto;
+        width: 100%; /* Pleine largeur sur les petits écrans */
+        margin: 10px 0;
     }
 
-    .movie-card h2 {
-        font-size: 14px;
-    }
-
-    .movie-card p {
-        font-size: 11px;
-    }
-
-    .add-to-list-button {
-        font-size: 12px;
+    .movie-cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
     }
 }
 
-/* Small screens (mobile portrait) */
-@media screen and (max-width: 480px) {
-    .home-container {
-        padding: 1rem;
-    }
+/* Modal Overlay */
+.edit-form-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+}
 
-    .body-container {
-        margin-left: 1rem;
-        margin-top: 20px;
+/* Modal Styling */
+.edit-form-modal {
+    background-color: #1c1e26;
+    border-radius: 8px;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    color: #f1f1f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    animation: scaleUp 0.3s forwards;
+    text-align: center;
+}
+
+.edit-form-modal h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #8a5cf6;
+}
+
+/* Input Styling */
+.edit-form-modal input {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #2c2f3a;
+    color: #f1f1f1;
+    font-size: 1rem;
+}
+
+.edit-form-modal input::placeholder {
+    color: #bbb;
+}
+
+/* Button Styling */
+.edit-form-modal button {
+    padding: 0.7rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.edit-form-modal button:first-of-type {
+    background-color: #8a5cf6;
+    color: #fff;
+}
+
+.edit-form-modal button:first-of-type:hover {
+    background-color: #7b4fcf;
+}
+
+.edit-form-modal button:last-of-type {
+    background-color: #555;
+    color: #fff;
+}
+
+.edit-form-modal button:last-of-type:hover {
+    background-color: #444;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+}
+
+/* Responsive Modal */
+@media (max-width: 480px) {
+    .edit-form-modal {
+        padding: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 2rem;
     }
 
     .movie-cards-container {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
-    .add-movie-list-button-plus {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .movie-card {
-        font-size: 14px;
-    }
-
-    .movie-card h2 {
-        font-size: 14px;
-    }
-
-    .add-to-list-button {
-        font-size: 12px;
+    .subtitle {
+        font-size: 1rem;
     }
 }
-

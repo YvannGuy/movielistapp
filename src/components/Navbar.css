@@ -6,6 +6,7 @@
     padding: 10px 20px;
     background-color: #080b17;
     color: white;
+    position: relative;
 }
 
 .header .logo {
